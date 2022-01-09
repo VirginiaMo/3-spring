@@ -1,0 +1,166 @@
+.containerProcesos{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4rem;
+    margin-right: -10rem;
+    margin-left: 50rem;
+    
+}
+.containerProcesos .botonAñadir{
+    
+    margin-top: -2rem;
+    width: 164px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #E6E6EA;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-left: 19rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    padding-right: 0.7rem;
+}
+.containerProcesos .iconFaTimes{
+    margin-right: 0.8rem;
+    font-size: 10px;
+    color:black;
+}
+.containerProcesos .botonEtiqueta{
+    background: #3684FA;
+    border-radius: 40px;
+    padding: 4px 8px;
+    width: 150px;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    color: white;
+}
+.containerProcesos .entrevistado{
+    background: #3FCBF8;
+    border-radius: 40px;
+    padding: 4px 8px;
+    width: 110px;
+    margin-left: 4.5rem;
+    margin-top: 1rem;
+    color: white;
+}
+.containerProcesos .rechazado{
+    background: #D04566;
+    border-radius: 40px;
+    padding: 4px 8px;
+    width: 100px;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    color: white;
+}
+.containerProcesos .contratado{
+    background: #36E4A6;
+    border-radius: 40px;
+    padding: 4px 8px;
+    width: 110px;
+    margin-left: 4.5rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+.containerFila{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    background: #F8F8F9;
+    border: 1px solid #F2F3F4;
+    box-sizing: border-box;
+    border-radius: 11px;
+    width: 630px;
+    height: 70px;
+    margin-left: -10rem;
+ 
+}
+ .text2{
+    margin-top: 2.5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #8C909C;
+    margin-left: -5.5rem;
+}
+ .text1{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+ .text3{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 0.8rem;
+    margin-left: 1.5rem;
+}
+ .text5{
+    margin-top: 2rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 14px;
+    margin-left: -4.5rem;
+    font-size: 15px;
+
+
+}
+ .text4{
+   margin-left: 2.5rem;
+   font-family: Raleway;
+   font-style: normal;
+   font-weight: 500;
+   color: #8C909C;
+   margin-top: 0.8rem;
+   font-size: 12px;
+}
+.containerFila1{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8.5rem;
+    background: #F8F8F9;
+    border: 1px solid #F2F3F4;
+    box-sizing: border-box;
+    border-radius: 11px;
+    width: 630px;
+    height: 70px;
+    margin-left: -36rem;
+ 
+}
+.containerFila2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 14.5rem;
+    background: #F8F8F9;
+    border: 1px solid #F2F3F4;
+    box-sizing: border-box;
+    border-radius: 11px;
+    width: 630px;
+    height: 70px;
+    margin-left: -36rem;
+ 
+}
+.containerFila3{
+    display: flex;
+    flex-direction: row;
+    margin-top: 21.5rem;
+    background: #F8F8F9;
+    border: 1px solid #F2F3F4;
+    box-sizing: border-box;
+    border-radius: 11px;
+    width: 630px;
+    height: 70px;
+    margin-left: -36rem;
+ 
+}

@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+.modal-content{
+    width: 1000px;
+    height: 600px;
+}
+
+.formPopUp form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.formPopUp .labelNombre{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px
+}
+.formPopUp .inputText1{
+    width: 27rem;
+    height: 40px;
+    margin-left: 0rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left:1rem ;
+    background: #F8F8F9;
+    border-radius: 8px;
+    color: #A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.formPopUp .labelPais{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px
+}
+.formPopUp .selectPais{
+    width: 12rem;
+    height: 40px;
+    margin-left: 0rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    background: #F8F8F9;
+    border-radius: 8px;
+    color:#A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.formPopUp .selectCiudad{
+    width: 12rem;
+    height: 40px;
+    margin-left: 14rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    background: #F8F8F9;
+    border-radius: 8px;
+    color:#A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+   
+}
+.formPopUp .labelCiudad{
+margin-left: 14rem;
+margin-top: -6rem;
+margin-bottom: 1rem;
+font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+
+}
+.formPopUp .inputTelefono{
+    width: 12rem;
+    height: 40px;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    padding-left: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+.formPopUp .labelTelefono{
+    margin-bottom: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+.formPopUp .labelEmail{
+    margin-left: 14rem;
+    margin-top: -6rem;
+    margin-bottom: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+.formPopUp .inputEmail{
+    width: 12rem;
+    height: 40px;
+    margin-left: 14rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.formPopUp .selectPresencial{
+    width: 12rem;
+    height: 40px;
+    margin-left: 0rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    background: #F8F8F9;
+    border-radius: 8px;
+    color:#A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.formPopUp .labelTraslado{
+    margin-left: 14rem;
+    margin-top: -6rem;
+    margin-bottom: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px
+}
+.formPopUp .selectTraslado{
+    width: 12rem;
+    height: 40px;
+    margin-left: 14rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    background: #F8F8F9;
+    border-radius: 8px;
+    color:#A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.formPopUp .labelLinkedin{
+    margin-bottom: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px
+}
+.formPopUp .inputLinkedin{
+    width: 27rem;
+    height: 40px;
+    margin-left: 0rem;
+    margin-bottom: 1rem;
+    background: #F8F8F9;
+    border-radius: 8px;
+}
+.RightSide{
+    display: flex;
+    flex-direction: column;
+    margin-top: -30rem;
+    margin-left: 29rem;
+    
+}
+.RightSide p{
+    margin-left: 10rem;
+    margin-bottom: 0.5rem;
+    margin-top: -2.8rem;
+    color: #878EA0;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+}
+.RightSide .labelFoto{
+    margin-bottom: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px
+}
+.RightSide .labelCV{
+    margin-bottom: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px
+}
+.RightSide .p1{
+    margin-top: -0.5rem;
+}
+.RightSide .p2{
+    margin-top: -0.5rem;
+    margin-left: 15rem;
+}
+.RightSide .p3{
+    margin-left: 15rem;
+}
+.RightSide .inputEtiqueta{
+    margin-top: 1rem;
+    width: 30rem;
+    height: 40px;
+    padding-left: 1rem;
+    background: #F8F8F9;
+    border-radius: 8px;
+    color:#A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.RightSide .labelEtiqueta{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 1rem;
+}
+.RightSide .subir{
+    height: 40px;
+    width: 150px;
+}
+.RightSide #subirboton{
+    width: 230px;
+}
+h6{
+    font-family: Raleway;
+font-style: normal;
+font-weight: 600;
+font-size: 19px;
+line-height: 22px;
+}

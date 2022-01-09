@@ -1,0 +1,213 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.containerFiltro{
+    width: 315px;
+    height: 670px;
+    margin-left: 87.8rem;
+    margin-top: -42.4rem;
+    border: #A5A8B3 solid 1px;
+    
+   
+}
+.iconTrash{
+    color:#32D4A4;
+    margin-right: -14rem;
+    margin-top: 3rem;
+  
+}
+
+.containerFiltro h5{
+   margin-top: -1rem;
+    margin-left: -6rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.containerFormulario form{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.containerFormulario select{
+   
+    height: 4vh;
+    background: #F8F8F9;
+    border-radius: 8px;
+    
+}
+.containerFormulario .labelTecno{
+ margin-left: 1.5rem;
+ margin-top: 0.5rem;
+ font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+}
+.containerFormulario .selectTecno{
+    margin-left: 1.7rem;
+    margin-top: 0rem;
+    color:#A5A8B3;
+    width: 16rem;
+}
+button{
+    background: #E6E6EA;
+    border-radius: 20px;
+    width: 103px;
+    height: 24px;
+    padding: 3px 6px 3px 10px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+   
+  
+}
+.iconFaTimes{
+    color: #A5A8B3;
+    margin-left: 0.5rem;
+}
+.tagReact{
+    margin-left: 9rem;
+    margin-top: -1.5rem;
+
+
+}
+.containerFormulario .tagHtml{
+    margin-left: 1.5rem;
+    margin-top: 0rem;
+}
+.containerFormulario .tagAngular{
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+.containerFormulario .labelPais{
+    
+    margin-top: 1rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 1.5rem;
+}
+.containerFormulario .selectPais{
+    margin-left: 1.7rem;
+    margin-top: 0rem;
+    opacity: 75%;
+    width: 16rem;
+}
+.containerFormulario .labelCiudad{
+    margin-left: 1.5rem;
+    margin-top: 0rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+.containerFormulario .selectCiudad{
+    margin-left: 1.7rem;
+    margin-top: 0rem;
+    opacity: 75%;
+    width: 16rem;
+}
+.containerFormulario .labelCheckbox1{
+    margin-left: 2rem;
+    margin-top: 0rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+.containerFormulario .inputCheck1{
+    margin-left: -9rem;
+    margin-top: 0rem;
+    height: 15px;
+}
+.containerFormulario .labelCheckbox2{
+    margin-top: -2rem;
+    margin-left: 5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    
+}
+.containerFormulario .inputCheck2{
+    margin-left: -9rem;
+    margin-top: 0rem;
+    height: 15px;
+}
+.containerFormulario .labelCheckbox3{
+    margin-top: -2rem;
+    margin-left: 5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+.containerFormulario .labelcheckbox4{
+    margin-left: 2rem;
+    margin-top: 0rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+.containerFormulario .labelCheckbox5{
+    margin-top: -2.2rem;
+    margin-left: 5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+.containerFormulario .labelCheckbox6{
+    margin-top: 0rem;
+    margin-left: 2rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+.containerFormulario .labelCheckbox7{
+    margin-top: -2.2rem;
+    margin-left: 5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+  
+}
+.containerFormulario .labelCheckbox8{
+    margin-top: -2.2rem;
+    margin-left: 5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+.containerFormulario .labelCheckbox{
+    margin-top: -2.2rem;
+    margin-left: 5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px; 
+}

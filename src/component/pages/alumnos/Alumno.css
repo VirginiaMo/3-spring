@@ -1,0 +1,207 @@
+.subir{
+    padding: 5px 10px;
+    background-color:  #A5A8B3;
+    border-radius: 8px;
+    color:#FFFFFF;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    width: 120px;
+    height: 30px;
+    padding-left: 10px;
+    padding-top: 12px;
+  
+}
+
+
+.iconCloud{
+    color:#F8F8F9;
+    margin-right: 10px;
+}
+.trashIcon{
+    margin-right: 10px;
+}
+.inputFile{
+    display: none;
+}
+.borrar{
+    width: 120px;
+    height: 45px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: -12.1rem;
+    background: #FFFFFF;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    margin-left: 12rem;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    margin-left:15rem;
+    margin-top: 1rem;
+    margin-right: 3rem;
+}
+.header p{
+    margin-right: 0.5rem;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    
+}
+.header .chevronLeft{
+    margin-right: 0.5rem;
+    margin-top: 0rem;
+}
+.candidatos{
+    
+    color: rgba(7, 15, 48, 0.4);
+}
+.NombreCandidatos h5{
+    margin-left: -45rem;
+    margin-top: -3.5rem;
+    font-size: 18px;
+}
+.NombreCandidatos p{
+    margin-top: -1.5rem;
+    color: #A5A8B3;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 26rem;
+    margin-bottom: 1.5rem;
+}
+.subtitle{
+    display: flex;
+    flex-direction: column;
+margin-left: 21rem;
+}
+.subtitle .p1{
+margin-left: -65rem;
+margin-top: -1.3rem;
+}
+.subtitle .iconCircle{
+    margin-left: 10rem;
+    margin-top: -2.2rem;
+    color: #8C909C;
+}
+.subtitle .p2{
+    margin-left: -41rem;
+    margin-top: -1.2rem;
+    }
+    .subtitle button{
+        margin-left: 38rem;
+        margin-top: -2.5rem;
+        background: #36E4A6;
+        color: #FFFFFF;
+    }
+    .containerFormulario{
+        display: flex;
+        flex-direction: column;
+     }
+
+     .containerFormulario input{
+        margin-bottom: 1rem;
+        width: 380px;
+        height: 40px;
+        padding-left: 15px;
+        background: #F8F8F9;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        margin-left: 16rem;
+    }
+    .containerFormulario label{
+        margin-bottom: 5px;
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        margin-left: 16.2rem;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .containerFormulario select{
+        margin-bottom:1rem ;
+        width: 380px;
+        height: 40px;
+        padding-left: 15px;
+        background: #F8F8F9;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        margin-left: 16rem;
+    } 
+    
+.containerFormulario .nombreAlumno{
+    width: 790px;
+    height: 40px;
+}
+.labelNombre{
+    margin-top: 2rem;
+}
+.containerFormulario .inputLabel{
+    margin-left: 42rem;
+    margin-top: -5.2rem;
+}
+.containerFormulario .inputEmail{
+    margin-left: 42rem;
+}
+.containerFormulario .inputLabelCiudad{
+    margin-left: 42rem;
+    margin-top: -5.2rem;
+}
+.containerFormulario .inputCiudad{
+    margin-left: 42rem;
+}
+.containerFormulario .inputPresencialidad{
+    margin-left: 42rem;
+    margin-top: -5.2rem;
+}
+.containerFormulario .selectPresencialidad{
+    margin-left: 42rem;
+}
+.containerFormulario .estadoLaboral{
+    margin-left: 42rem;
+    margin-top: -5.2rem;
+}
+.containerFormulario .selectEstadoLaboral{
+    margin-left: 42rem;
+}
+.containerFormulario .subir{
+    width: 163px;
+height: 44px;
+}
+.containerFormulario .borrar{
+    margin-left: 28rem;
+    margin-top: -3.3rem;
+}
+hr{
+    margin-top: -0.5rem;
+}
+.map{
+    color: #8C909C;
+    margin-top: -1rem;
+    margin-left: -0.3rem;
+}
+.rotate hr{
+    transform: rotate(90deg);
+width: 625px;
+margin-left: 48rem;
+margin-top: -20rem;
+}

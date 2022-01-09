@@ -1,0 +1,54 @@
+.pdf-container{
+   
+    margin-left: 3rem;
+    margin-top: 3rem;
+
+}
+ .content .modal-content{
+    width: 600px;
+    margin-left: 37rem;
+    height: 530px;
+    margin-top: 2rem;
+   background-color:#535659;;
+}
+.rpv-core__text-layer{
+    width: 400px;
+
+}
+.inputZoom{
+    width:20px;
+    margin-left: -4rem;
+}
+.input-group-text{
+    width: 20px;
+    height: 20px;
+    margin-right: -5rem;
+    padding-left: 0.2rem;
+    margin-left: -4rem;
+}
+.tituloPDF{
+    color: white;
+    margin-top: 1rem;
+}
+.iconMinus{
+    color:white;
+    margin-left: -6rem;
+    font-size: 12px;
+    margin-right: -2rem;
+}
+.iconPlus{
+    color:white;
+    margin-left: -6rem;
+    font-size: 12px;
+}
+.iconArrow{
+    color:white;
+    margin-left: -5rem;
+}
+.iconDowload{
+    color:white;
+    margin-right: 1rem;
+}
+.spanBarra{
+    margin-left: -1.5rem;
+}

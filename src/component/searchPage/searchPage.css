@@ -1,0 +1,60 @@
+.select{
+    width: 95rem;
+    height: 3.3rem;
+    margin-left: 12.5rem;
+    background: #FFFFFF;
+    padding-left: 4.5rem;
+    opacity: 50%;
+  
+}
+.containerSelect{
+    margin-top: -45rem;
+    position: relative;
+
+}
+.containerSelect .searchIcon{
+    position: absolute;
+    margin-left: 15rem;
+    margin-top: 1.2rem;
+
+
+}
+.añadirAlumnos{
+    margin-left: 65rem;
+    margin-top: 4rem;
+    width: 168px;
+    height: 40px;
+    background: #FFFFFF;
+/* Greys/Grey3 */
+    border: 1px solid #E6E6EA;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 13px;
+}
+.plusIcon{
+    font-size: 10px;
+    margin-right: 0.5rem;
+}
+
+.containerSelect .iconoNombre{
+position: absolute;
+width: 40px;
+height: 40px;
+/* Greys/Black */
+background: #121625;
+border-radius: 59px;
+margin-left: 98rem;
+margin-top: -3rem;
+
+}
+.containerSelect .Nombre{
+ margin-left: 3.5rem;
+ margin-top: -2.5rem;
+
+}
+.containerSelect .insideIcono{
+    margin-top: 0.5rem;
+    color: #515561;
+
+
+}
