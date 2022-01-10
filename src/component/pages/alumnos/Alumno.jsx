@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { faChevronLeft, faCloudUploadAlt, faDotCircle, faMapMarkedAlt, faMapMarkerAlt, faSearch, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faCloudUploadAlt, faDotCircle, faMapMarkerAlt, faSearch, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Imagen from "../../image/Image";
 import NavTabs from "../../tabs/Tabs";
