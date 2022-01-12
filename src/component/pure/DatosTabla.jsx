@@ -43,7 +43,7 @@ export default function DatosTabla( { sortBy, searchBy, hideColumns }){
 			return { backgroundColor: 'white', color: 'black' }
 		}
 	  }
-debugger;
+
 	const handleOnRowClick = (e, id) => {
 		e.preventDefault();
 		console.log("redirecting");

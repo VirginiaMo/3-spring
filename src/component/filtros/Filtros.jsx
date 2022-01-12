@@ -1,8 +1,30 @@
 import './Filtros.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+
+
 
 const Filtros = () => {
+    
+const [technologies, setTechnologies] = useState([""]);
+
+function handleSubmit(e){
+    e.preventDefault()
+   
+}
+
+ const addTechnology = (e) => {     
+        setTechnologies(technologies.concat(e.target.options[e.target.selectedIndex].text));
+        e.target.value = 1;
+
+ }
+
+const closeButton=(e)=>{
+    e.preventDefault()
+    setTechnologies([])
+}
+
     return (  
         <div className='containerFiltro'>
             <div>
@@ -10,18 +32,28 @@ const Filtros = () => {
             <h5>Filtros de Búsqueda</h5>
             </div>
             <div className='containerFormulario'>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label className='labelTecno'>Tecnologías</label>
-                    <select className='selectTecno'>
-                        <option>Escribe para buscar...</option>
+                    <select className='selectTecno' onChange={(e)=> addTechnology(e)}>
+                    <option value="1" defaultValue={[0]}>Elige...</option> 
+                    <option value="2">JAVASCRIPT</option> 
+                    <option value="3">REACT</option>   
                     </select>
-                    <button className='tagHtml'>HTML&CSS<FontAwesomeIcon className='iconFaTimes' icon={faTimes} /></button>
-                    <button className='tagReact'>REACT <FontAwesomeIcon className='iconFaTimes' icon={faTimes} /></button>
-                    <button className='tagAngular'>ANGULAR <FontAwesomeIcon className='iconFaTimes' icon={faTimes} /></button>
+
+                    {
+                        technologies.filter(x => x !== "")
+                                    .map(t =>  {
+                            return(<button className='tagHtml'>{t}<FontAwesomeIcon className='iconFaTimes' icon={faTimes} onClick={closeButton} /></button>)
+                        })
+                    }
+                    
                     <label className='labelPais'>País</label>
                     <select className='selectPais'>
-                        <option>España</option>
+                        <option value="1" defaultValue={[0]}>Buscar</option>
+                        <option value="2">España</option>
+                        <option value="2">Argentina</option>
                     </select>
+                   
                     <label className='labelCiudad'>Ciudad</label>
                     <select className='selectCiudad'>
                         <option>Barcelona</option>

@@ -5,11 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 
- const NuevoAlumno = ({show}) => {
+ const NuevoAlumno = ({show, setShow}) => {
+    const handleClose = () => setShow(false);
     return ( 
     <div className="containerModal">
         <Modal show={show} >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton onClick={handleClose}>
             <h6>Nuevo Candidato</h6>
         </Modal.Header>
         <Modal.Body>
