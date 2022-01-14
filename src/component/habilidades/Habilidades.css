@@ -26,7 +26,8 @@
     font-size: 14px;
     margin-bottom: 1rem;
 }
-.tags button{
+
+.tags{
     background: #E6E6EA;
     border-radius: 20px;
     width: 160px;
@@ -37,12 +38,13 @@
 .contenido .labelIdiomas{
     margin-top: 2rem;
 }
-.buttonIdiomas button{
+.buttonIdiomas{
     background: #E6E6EA;
     border-radius: 20px;
     width: 160px;
     height: 24px;
     margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
   
 }
 .buttonIdiomas .iconFaTimes{

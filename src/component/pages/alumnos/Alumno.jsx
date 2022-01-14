@@ -4,12 +4,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Imagen from "../../image/Image";
 import NavTabs from "../../tabs/Tabs";
 import './Alumno.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const Alumno = () => {
 
     const [pdfFileError, setPdfFileError]=useState('');
     const [pdfFileEvent, setPdfFileEvent]=useState('');
+
+    let navigate = useNavigate();
+    function returnTabla() {
+        navigate('/', {replace: true});
+    }
 
     return ( 
         <div className='containerSelect'>
@@ -24,7 +30,7 @@ const Alumno = () => {
             </div>
             <div className="header">
                 <p className="candidatos">Candidatos</p>
-                <FontAwesomeIcon  className='chevronLeft' icon={faChevronLeft}  />
+                <FontAwesomeIcon  className='chevronLeft' icon={faChevronLeft}  onClick={returnTabla} />
                 <p>Nombre Apellido</p>
             </div>
             <hr style={{width: 1720}}></hr>

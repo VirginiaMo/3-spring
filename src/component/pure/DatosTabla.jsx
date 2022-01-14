@@ -1,8 +1,12 @@
 import './DatosTabla.css';
 import React, {useEffect, useState} from "react";
 
+import { useNavigate } from "react-router-dom";
 
-export default function DatosTabla( { sortBy, searchBy, hideColumns }){
+
+
+
+export default function DatosTabla( { sortBy, searchBy, hideColumns}){
 
     const[datos, setDatos] = useState([]);
     const[sortedData, setSortedData] = useState([]);
@@ -44,15 +48,10 @@ export default function DatosTabla( { sortBy, searchBy, hideColumns }){
 		}
 	  }
 
-	const handleOnRowClick = (e, id) => {
-		e.preventDefault();
-		console.log("redirecting");
-	/*	return <Navigate
-      to={{
-        pathname: "/candidato",
-        id: id        
-      }}
-    />*/
+	
+	let navigate = useNavigate();
+	function handleClick() {
+		navigate('/alumnos', {replace: true});
 	}
 	
 	return 	(
@@ -69,16 +68,16 @@ export default function DatosTabla( { sortBy, searchBy, hideColumns }){
 					return item
 				}
 			}).map((item, index) => (
-				<tr key={index} onClick={(e) => handleOnRowClick(e, item.id)}>
-				    { (hideColumns == undefined || !hideColumns.includes("nombre")) && <td>{item.nombre}</td> }
+				<tr key={index} onClick={handleClick} >
+				    { (hideColumns == undefined || !hideColumns.includes("nombre")) && <td> {item.nombre}</td>}
 					{ (hideColumns == undefined || !hideColumns.includes("ciudad")) && <td>{item.ciudad}</td> }
 					{ (hideColumns == undefined || !hideColumns.includes("país")) && <td>{item.país}</td> }
 					{ (hideColumns == undefined || !hideColumns.includes("teléfono")) && <td>{item.teléfono}</td> }
 					{ (hideColumns == undefined || !hideColumns.includes("email")) &&<td>{item.email}</td>}
 					{ (hideColumns == undefined || !hideColumns.includes("etiquetas")) && <td>{item.etiquetas.map(etiqueta => { return <span className="btn-primary">{etiqueta}</span> })}</td>}
 					{ (hideColumns == undefined || !hideColumns.includes("estado")) && <td style={getTableColor(item.estado)} className='btn'>{item.estado}</td>}
-				</tr>
+					</tr>
 			))}
-		</tbody>
+		</tbody> 
 		)
 }

@@ -1,5 +1,6 @@
 [
-    {
+    {   
+        "id": 1,
         "nombre":"David González Moreno",
         "ciudad": "Madrid",
         "país": "España",
@@ -10,7 +11,8 @@
 
         
     },
-    {
+    {   
+        "id": 2,
         "nombre":"Pablo Jimeno Ferrán",
         "ciudad": "Barcelona",
         "país": "España",
@@ -21,6 +23,7 @@
         
     },
     {
+        "id": 3,
         "nombre":"Ana María Durán Díaz",
         "ciudad": "Buenos Aires",
         "país": "Argentina",
@@ -30,7 +33,8 @@
         "estado":"CONTRATADO"
       
     },
-    {
+    {   
+        "id": 4,
         "nombre":"Monica García Olmo",
         "ciudad": "Lucerna",
         "país": "Suiza",
@@ -39,7 +43,8 @@
         "etiquetas": ["ANGULAR", "REACT", "JAVASCRIPT", "+3"],
         "estado":"PDTE. OFERTAS"
     },
-    {
+    {   
+        "id": 5,
         "nombre":"Daniel Vázquez Moreno",
         "ciudad": "Sevilla",
         "país": "España",
@@ -50,6 +55,7 @@
        
     },
     {
+        "id": 6,
         "nombre":"Jorge Ferrán Robles",
         "ciudad": "Oviedo",
         "país": "España",
@@ -60,6 +66,7 @@
       
     },
     {
+        "id": 7,
         "nombre":"Pedro Ramirez Moreno",
         "ciudad": "Málaga",
         "país": "España",
@@ -69,7 +76,7 @@
         "estado":"PDTE. OFERTAS"
        
     },
-    {
+    {    "id": 8,
         "nombre":"Francisca Peralta Sánchez",
         "ciudad": "París",
         "país": "Francia",
@@ -79,7 +86,7 @@
         "estado":"CONTRATADO"
         
     },
-    {
+    {   "id": 9,
         "nombre":"Concepción Pinedo Seguidillo",
         "ciudad": "Segovia",
         "país": "España",
@@ -89,7 +96,7 @@
         "estado":"PRESELECCIONADO"
        
     },
-    {
+    {   "id": 10,
         "nombre":"Manolo Rivera Salgado",
         "ciudad": "Madrid",
         "país": "España",
@@ -99,7 +106,7 @@
         "estado":"CONTRATADO"
        
     },
-    {
+    {   "id": 11,
         "nombre":"Fernando Díaz Puentes",
         "ciudad": "Madrid",
         "país": "España",
@@ -109,7 +116,7 @@
         "estado":"PRESELECCIONADO"
        
     },
-    {
+    {   "id": 12,
         "nombre":"Francisco Rivera Salgado",
         "ciudad": "Málaga",
         "país": "España",

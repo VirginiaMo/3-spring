@@ -62,6 +62,7 @@
 .header .chevronLeft{
     margin-right: 0.5rem;
     margin-top: 0rem;
+    cursor: pointer;
 }
 .candidatos{
     

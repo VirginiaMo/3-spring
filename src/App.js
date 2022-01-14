@@ -23,6 +23,7 @@ function App() {
                 <Route path="/" element ={<Candidatos />}  />
                 <Route path="/alumnos" element={<Alumno />} />
                 <Route path="/clientes" element ={<Clientes />}  />
+                
           </Routes>
     </BrowserRouter>
       
