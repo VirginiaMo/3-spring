@@ -101,11 +101,12 @@ margin-top: -1.3rem;
     margin-left: -41rem;
     margin-top: -1.2rem;
     }
-    .subtitle button{
-        margin-left: 38rem;
+    .subtitle .butonContratado{
+        margin-left: 37rem;
         margin-top: -2.5rem;
         background: #36E4A6;
         color: #FFFFFF;
+        width: 120px;
     }
     .containerFormulario{
         display: flex;
@@ -205,4 +206,7 @@ hr{
 width: 625px;
 margin-left: 48rem;
 margin-top: -20rem;
+}
+.ImagenCandidato{
+    margin-top: 1.5rem;
 }

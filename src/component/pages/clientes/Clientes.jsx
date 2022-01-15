@@ -3,6 +3,8 @@ import TablaOrdenada from '../../TablaOrdenada';
 import { useState } from "react";
 import Filtros from '../../filtros/Filtros';
 import Buscador from '../../buscador/Buscador';
+import Navbar from '../../navbar/Navbar';
+
 
 
 
@@ -13,6 +15,7 @@ const Clientes= () => {
 
     return ( 
         <>  
+            <Navbar />
             <SearchPage/>
                 
             <Buscador setSearchText={setSearchText} title={"Cliente"} />

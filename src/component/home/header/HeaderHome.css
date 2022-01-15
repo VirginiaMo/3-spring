@@ -1,0 +1,28 @@
+.titleContainer{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 28px;
+  margin-top: 6rem;
+  margin-left: 1rem;
+
+  
+}
+.titleContainer h1{
+  font-size: 34px;
+}
+.titleContainer .alumnos{
+  color:#32D5A4;
+  
+}
+.vertical-line{
+  width: 4px; /* Line width */
+  height:3.2vh;
+  margin-top: 0.7rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+ background-color:#32D5A4;
+}

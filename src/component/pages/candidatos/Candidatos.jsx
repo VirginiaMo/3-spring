@@ -3,6 +3,7 @@ import Buscador from '../../buscador/Buscador';
 import TablaOrdenada from '../../TablaOrdenada';
 import { useState } from "react";
 import Filtros from '../../filtros/Filtros';
+import Navbar from '../../navbar/Navbar';
 
 
 
@@ -13,7 +14,7 @@ const Candidatos= () => {
     //const hideColumns = ["nombre"];
 
     return ( 
-        <>  
+        <>  <Navbar />
             <SearchPage/>
             <Buscador setSearchText={setSearchText} title={"Alumno"}/>
             <TablaOrdenada searchText={searchText} />

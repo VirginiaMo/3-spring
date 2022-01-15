@@ -19,7 +19,7 @@ const Navbar = () => {
               </li>
               <li>
                   <FontAwesomeIcon className='briefcase' icon={faUser} />
-                  <Link to='/'>Candidatos</Link>
+                  <Link to='/candidatos'>Candidatos</Link>
               </li>
               <li>
                   <FontAwesomeIcon className='briefcase' icon={faBuilding} />

@@ -5,6 +5,8 @@ import Imagen from "../../image/Image";
 import NavTabs from "../../tabs/Tabs";
 import './Alumno.css';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../navbar/Navbar';
+
 
 
 const Alumno = () => {
@@ -14,16 +16,19 @@ const Alumno = () => {
 
     let navigate = useNavigate();
     function returnTabla() {
-        navigate('/', {replace: true});
+        navigate('/candidatos', {replace: true});
     }
 
     return ( 
-        <div className='containerSelect'>
-            
+
+            <div><Navbar />
+            <div className='containerSelect'>
+           
             <FontAwesomeIcon  className='searchIcon' icon={faSearch}  />
             <select className='select'>
                 <option>Buscar por Candidatos por Nombre, por DNI, etc...</option>
             </select>
+          
             <div className='iconoNombre'>
                 <p className='insideIcono'>NA</p>
                 <p className='Nombre'>Nombre</p>
@@ -46,7 +51,7 @@ const Alumno = () => {
                 <p className="p1">Valencia, España</p>
                 <FontAwesomeIcon className="iconCircle" icon={faDotCircle}  />
                 <p className="p2">En remoto. Sin traslado</p>
-                <button>CONTRATADO</button>
+                <button className='butonContratado'>CONTRATADO</button>
             </div>
             
             <form className="containerFormulario">
@@ -103,7 +108,10 @@ const Alumno = () => {
             <hr ></hr>
             </div>
            <NavTabs pdfFileEvent={pdfFileEvent} setPdfFileError={setPdfFileError} />
-        </div>
+           
+           </div>
+           </div>
+        
      );
 }
  

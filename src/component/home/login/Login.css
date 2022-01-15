@@ -1,0 +1,54 @@
+.formulario{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top:-34rem;
+
+}
+.formulario label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 1rem;
+
+}
+.formulario input{
+    height: 5vh;
+    width: 25%;
+    font-size: 14px;
+    border-top-right-radius: 5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 0.7rem;
+    margin-left: 1rem;
+}
+.formulario .inputBox{
+  width: 15px;
+  margin-top: 0.3rem;
+}
+.formulario .recuerdame{
+  margin-left: 3rem;
+  margin-top: -1.6rem;
+}
+.formulario .anchor{
+  margin-left: 11rem;
+  margin-top: -2.2rem;
+}
+.formulario button{
+  
+    height: 4vh;
+    width: 25%;
+    background-color: #32D5A4;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius:5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: 1rem;
+   
+}
