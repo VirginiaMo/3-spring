@@ -244,3 +244,26 @@ font-weight: 600;
 font-size: 19px;
 line-height: 22px;
 }
+.RightSide button{
+    padding: 5px 10px;
+    background-color:  #A5A8B3;
+    border-radius: 8px;
+    color:#FFFFFF;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    width: 120px;
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 12px;
+}
+.RightSide .cancelar{
+margin-left: 23rem;
+margin-top: -3rem;
+}
+.RightSide .guardar{
+    margin-left: 13rem;
+    margin-top: 11rem;
+    }

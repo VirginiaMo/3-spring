@@ -6,21 +6,25 @@ import {BrowserRouter,Route,Routes} from "react-router-dom";
 import Alumno from './component/pages/alumnos/Alumno';
 import Clientes from './component/pages/clientes/Clientes.jsx'
 import Home from './component/home/Home';
-
-
-
-
-
-
+import useToken from './component/useToken/useToken';
+import Perfil from './component/pages/alumnos/perfil/Perfil';
 
 
 function App() {
+
+      const { token, setToken } = useToken();
+
+      if(!token) {
+        return < Home setToken={setToken} />
+      }
+      
   return (
     <div className="App">
     <BrowserRouter>
          
           <Routes>
-                <Route path="/" element={<Home />} /> 
+                <Route path="/" element={<Candidatos />} />
+                <Route path="/perfil" element={<Perfil />} />  
                 <Route path="/ofertas" element={<Ofertas />} /> 
                 <Route path="/candidatos" element ={<Candidatos />}  />
                 <Route path="/alumnos" element={<Alumno />} />

@@ -57,6 +57,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
                         <select className="inputEtiqueta">
                             <option>Escribe para buscar</option>
                         </select>
+                        <button className="guardar">Guardar</button>
+                        <button className="cancelar">Cancelar</button>
                     </div>
                 </form>
             </div>
