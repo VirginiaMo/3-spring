@@ -8,7 +8,7 @@ import Clientes from './component/pages/clientes/Clientes.jsx'
 import Home from './component/home/Home';
 import useToken from './component/useToken/useToken';
 import Perfil from './component/pages/alumnos/perfil/Perfil';
-
+import { AppContextProvider } from './context/appContext';
 
 function App() {
 
@@ -20,19 +20,19 @@ function App() {
       
   return (
     <div className="App">
-    <BrowserRouter>
-         
-          <Routes>
-                <Route path="/" element={<Candidatos />} />
-                <Route path="/perfil" element={<Perfil />} />  
-                <Route path="/ofertas" element={<Ofertas />} /> 
-                <Route path="/candidatos" element ={<Candidatos />}  />
-                <Route path="/alumnos" element={<Alumno />} />
-                <Route path="/clientes" element ={<Clientes />}  />  
-          </Routes>
-    </BrowserRouter>
-      
-       </div>
+          <AppContextProvider>
+                  <BrowserRouter>                        
+                        <Routes>
+                              <Route path="/" element={<Candidatos />} />
+                              <Route path="/perfil/:id" element={<Perfil  />} />  
+                              <Route path="/ofertas" element={<Ofertas />} /> 
+                              <Route path="/candidatos" element ={<Candidatos />}  />
+                              <Route path="/alumnos" element={<Alumno />} />
+                              <Route path="/clientes" element ={<Clientes />}  />  
+                        </Routes>
+                  </BrowserRouter>
+            </AppContextProvider>
+      </div>
   );
 }
 

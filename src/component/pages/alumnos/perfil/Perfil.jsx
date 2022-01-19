@@ -10,13 +10,31 @@ import PDF from '../../../CV/PDF';
 import Procesos from '../../../procesos/Procesos';
 import Informacion from '../../../informacion/Informacion';
 import { useState } from 'react';
+import {  useParams } from "react-router-dom";
+import useCandidatos from "../../../customHooks/candidatos/useCandidatos"
 
 
-
-const Perfil = (props) => {
+const Perfil = () => {
 
     const [key, setKey] = useState('informacion');
+    const { id } = useParams();
+    console.log(id);
+
+/*console.
+    const { state } = useLocation();
+    const loc = useLocation();
+    console.log(loc);
+    const idAlumno = state;
+    console.log(idAlumno);*/
+
+    //const { idAlumno } = route.params;
+    const { candidatos } = useCandidatos();
     
+    
+    console.log(candidatos);
+    const alumno = candidatos.find(x => x.id === parseInt(id, 10));
+    console.log(alumno);
+
     return ( 
         <div className='containerPerfil'>
             <Navbar />
@@ -47,13 +65,14 @@ const Perfil = (props) => {
                     onSelect={(k) => setKey(k)}
                     className='tagsPerfil'>
                     <Tab eventKey="informacion" title="Información">
-                    <Informacion />
+                    <Informacion alumno={alumno}/>
                     </Tab>
                     <Tab eventKey="home" title="Habilidades">
                     <Habilidades />
                     </Tab>
                     <Tab eventKey="PDF" title="Currículum Vitae">
-                    <PDF pdfFileEvent={props.pdfFileEvent} setPdfFileError={props.setPdfFileError}  />
+                    
+            {/*        <PDF pdfFileEvent={props.pdfFileEvent} setPdfFileError={props.setPdfFileError}  />*/}
                     </Tab>
                     <Tab eventKey="procesos" title="Procesos">
                     <Procesos />
@@ -63,4 +82,4 @@ const Perfil = (props) => {
      );
 }
  
-export default Perfil;
+export default Perfil ;

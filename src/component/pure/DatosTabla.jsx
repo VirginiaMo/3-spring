@@ -1,18 +1,18 @@
 import './DatosTabla.css';
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-
+import useCandidatos from "../customHooks/candidatos/useCandidatos"
 
 
 export default function DatosTabla( { sortBy, searchBy, hideColumns}){
 
-    const[datos, setDatos] = useState([]);
+	const { candidatos } = useCandidatos();
     const[sortedData, setSortedData] = useState([]);
 
     React.useMemo(() => {
-        let sortedDatos = [...datos];
+        let sortedDatos = [...candidatos];
         if (sortBy !== null) {
             sortedDatos.sort((a, b) => {
                 if (a[sortBy.key] < b[sortBy.key]) {
@@ -26,13 +26,8 @@ export default function DatosTabla( { sortBy, searchBy, hideColumns}){
           }
           setSortedData(sortedDatos);
         return sortedDatos;
-    }, [datos, sortBy]);
+    }, [candidatos, sortBy]);
 	
-	useEffect(() => { 
-		fetch('/data/data.json')
-		.then(response => {  return response.json(); })
-		.then(datos => setDatos(datos))
-	}, []);
     
 	const getTableColor = criterio => {
 		
