@@ -8,7 +8,7 @@ import HabilidadesReducer from './HabilidadesReducer'
 
 const Habilidades = () => {
 const [state, dispatch] = useReducer(HabilidadesReducer.reducer, HabilidadesReducer.initialState)
-function deleteTecnologia(tecnologia, idiomas) {
+function deleteTecnologia(tecnologia) {
     dispatch({ type: HabilidadesReducer.types.DELETE_TAG, value: tecnologia })
 
 };

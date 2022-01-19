@@ -57,7 +57,7 @@ export default function DatosTabla( { sortBy, searchBy, hideColumns}){
 					return item
 				}else if(item.nombre.toLowerCase().includes(searchBy.toLocaleLowerCase())
 					|| item.ciudad.toLowerCase().includes(searchBy.toLocaleLowerCase())
-					|| item.país.toLowerCase().includes(searchBy.toLocaleLowerCase())
+					|| item.pais.toLowerCase().includes(searchBy.toLocaleLowerCase())
 					|| item.email.toLowerCase().includes(searchBy.toLocaleLowerCase())
 					|| item.ciudad.toLowerCase().includes(searchBy.toLocaleLowerCase())){
 					return item
@@ -66,8 +66,8 @@ export default function DatosTabla( { sortBy, searchBy, hideColumns}){
 				<tr key={index} onClick={handleClick} >
 				    { (hideColumns == undefined || !hideColumns.includes("nombre")) && <td> {item.nombre}</td>}
 					{ (hideColumns == undefined || !hideColumns.includes("ciudad")) && <td>{item.ciudad}</td> }
-					{ (hideColumns == undefined || !hideColumns.includes("país")) && <td>{item.país}</td> }
-					{ (hideColumns == undefined || !hideColumns.includes("teléfono")) && <td>{item.teléfono}</td> }
+					{ (hideColumns == undefined || !hideColumns.includes("pais")) && <td>{item.pais}</td> }
+					{ (hideColumns == undefined || !hideColumns.includes("telefono")) && <td>{item.telefono}</td> }
 					{ (hideColumns == undefined || !hideColumns.includes("email")) &&<td>{item.email}</td>}
 					{ (hideColumns == undefined || !hideColumns.includes("etiquetas")) && <td>{item.etiquetas.map(etiqueta => { return <span className="btn-primary">{etiqueta}</span> })}</td>}
 					{ (hideColumns == undefined || !hideColumns.includes("estado")) && <td style={getTableColor(item.estado)} className='btn'>{item.estado}</td>}

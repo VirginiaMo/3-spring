@@ -1,50 +1,48 @@
 
 
 const Informacion = ( { alumno }) => {
-  console.log(alumno);
+  
     return (
       <form className="containerFormulario">
       <label className="labelNombre">Nombre y Apellidos</label>
       <input className='nombreAlumno' type="text" placeholder='Nombre Alumno' value={alumno.nombre}></input>
       <label className='labelTelefono'>Nº Teléfono</label>
-      <input type="text"></input>
+      <input type="text" value={alumno.telefono}></input>
       <label className='inputLabel'>Email</label>
-      <input className='inputEmail' type="email" placeholder='email'></input>
-      <label className='labelPais'>País</label>
-      <select>
-          <option value="1"></option>
-          <option value="2">España</option>
-          <option value="3">Suiza</option>
-          <option value="4">Argentina</option>
-          <option value="5">Alemania</option>
-          <option value="6">Estados Unidos</option>
+      <input className='inputEmail' type="email" placeholder='email'value={alumno.email}></input>
+      <label className='labelP'>País</label>
+      <select value={alumno.pais}>
+          <option value="España">España</option>
+          <option value="Suiza">Suiza</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Alemania">Alemania</option>
+          <option value="Estados Unidos">Estados Unidos</option>
       </select>
       <label className='inputLabelCiudad'>Ciudad</label>
-      <select className='inputCiudad'>
-          <option value="1"></option>
-          <option value="2">Málaga</option>
-          <option value="3">Barcelona</option>
-          <option value="4">Sevilla</option>
-          <option value="5">Galicia</option>
-          <option value="6">Valencia</option>
+      <select className='inputCiudad' value={alumno.ciudad}>
+          <option value="Malaga">Málaga</option>
+          <option value="Barcelona">Barcelona</option>
+          <option value="Sevilla">Sevilla</option>
+          <option value="Galicia">Galicia</option>
+          <option value="Valencia">Valencia</option>
       </select>
       <label className='labelTraslado'>Traslado</label>
-      <select>
-          <option value="1">Sí</option>
-          <option value="2">No</option>
+      <select value={alumno.traslado}>
+          <option value="Si">Sí</option>
+          <option value="No">No</option>
       </select>
       <label className='inputPresencialidad'>Presencialidad</label>
-      <select className='selectPresencialidad'>
-          <option value="1">Presencial</option>
-          <option value="2">Remoto</option>
+      <select className='selectPresencialidad' value={alumno.presencialidad}>
+          <option value="Presencial">Presencial</option>
+          <option value="Remoto">Remoto</option>
       </select>
       <label>Enlace a Linkedin</label>
-      <input type="text" placeholder="http://linkedin.com/user_id3423984324"></input>
+      <input type="text" placeholder="http://linkedin.com/user_id3423984324" value={alumno.linkedin}></input>
       <label className="estadoLaboral">Estado laboral</label>
-      <select className="selectEstadoLaboral">
-          <option value="Contratado"></option>
-          <option value="Pdte. Ofertas"></option>
-          <option value="Preseleccionado"></option>
+      <select className="selectEstadoLaboral" value={alumno.estado}>
+          <option value="Contratado">Contratado</option>
+          <option value="Pdte. Ofertas">Pdte. Ofertas</option>
+          <option value="Preseleccionado">Preseleccionado</option>
       </select>
       </form>
       );

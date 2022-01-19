@@ -24,8 +24,8 @@ export default function TablaOrdenada( { searchText, hideColumns }) {
 	             <tr className='tabla'>
 				  { (hideColumns == undefined || !hideColumns.includes("nombre")) && <th>NOMBRE <FontAwesomeIcon icon={faExchangeAlt} onClick={() => requestSort('nombre')} /></th> }
 				  { (hideColumns == undefined || !hideColumns.includes("ciudad")) &&  <th>CIUDAD <FontAwesomeIcon icon={faExchangeAlt}  onClick={() => requestSort('ciudad')} /></th>}
-				  { (hideColumns == undefined || !hideColumns.includes("país")) &&  <th>PAÍS <FontAwesomeIcon icon={faExchangeAlt}  onClick={() => requestSort('país')} /></th>}
-				  { (hideColumns == undefined || !hideColumns.includes("teléfono")) &&   <th>TELÉFONO </th>}
+				  { (hideColumns == undefined || !hideColumns.includes("pais")) &&  <th>PAÍS <FontAwesomeIcon icon={faExchangeAlt}  onClick={() => requestSort('pais')} /></th>}
+				  { (hideColumns == undefined || !hideColumns.includes("telefono")) &&   <th>TELÉFONO </th>}
 				  { (hideColumns == undefined || !hideColumns.includes("email")) &&  <th>CORREO ELECTRÓNICO <FontAwesomeIcon icon={faExchangeAlt}  onClick={() => requestSort('email')} /></th>}
 				  { (hideColumns == undefined || !hideColumns.includes("etiquetas")) &&  <th>TECNOLOGÍAS <FontAwesomeIcon icon={faExchangeAlt}  onClick={() => requestSort('etiquetas')} /></th>}
 				  { (hideColumns == undefined || !hideColumns.includes("estado")) &&   <th>ESTADO</th>}

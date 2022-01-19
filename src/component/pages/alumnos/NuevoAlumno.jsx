@@ -19,15 +19,14 @@ import { useNavigate } from "react-router-dom";
 
     const save = (e) => {
         e.preventDefault();
-        state.etiquetas = [];
         let nuevoCandidato = addCandidato(state);
-        navigate(`/perfil/${nuevoCandidato.id}` );
-        console.log(nuevoCandidato)
-        console.log(state.nombre)
+        navigate(`/perfil/${nuevoCandidato.id}` );        
     }
 
-   
-
+    let etiquetasSeleccionadas = null;
+    if (state.etiquetas.length > 0) {
+        etiquetasSeleccionadas = state.etiquetas.map(etiqueta => { return <span className="btn-primary">{etiqueta}</span> });
+    }
 
     return ( 
     <div className="containerModal">
@@ -58,10 +57,10 @@ import { useNavigate } from "react-router-dom";
                     })
                      }}> 
                     
-                        <option value="1" defaultValue={[0]}>Buscar</option>
-                        <option value="2">España</option>
-                        <option value="3">Argentina</option>
-                        <option value="4">Suiza</option>
+                        <option value="0" defaultValue={[0]}>Buscar</option>
+                        <option value="España">España</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Suiza">Suiza</option>
                     </select>
                     <label className="labelCiudad">Ciudad</label>
                     <select className="selectCiudad"
@@ -73,13 +72,13 @@ import { useNavigate } from "react-router-dom";
                         })
                         }}> 
 
-                        <option value="1" defaultValue={[0]} >Elige ciudad</option>
-                        <option value="2">Barcelona</option>
-                        <option value="3">Madrid</option>
-                        <option value="4">Málaga</option>
+                        <option value="0" defaultValue={[0]} >Elige ciudad</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Malaga">Málaga</option>
                     </select>
                     <label className="labelTelefono">Nº de Teléfono</label>
-                    <input className="inputTelefono" type="tel" placeholder="Ej: +34 897 67 88 98"
+                    <input className="inputTelefono" type="text" placeholder="Ej: +34 897 67 88 98"
                     value={state.telefono}
                     onChange={e =>{ e.preventDefault(); dispatch({
                         type:NuevoAlumnoReducer.types.TELEFONO, 
@@ -107,8 +106,8 @@ import { useNavigate } from "react-router-dom";
                          })
                          }}> 
                         <option value="1" defaultValue={[0]} >Elige una opción</option>
-                        <option value="2">Presencial</option>
-                        <option value="3">Remoto</option>
+                        <option value="Presencial">Presencial</option>
+                        <option value="Remoto">Remoto</option>
                     </select>
                     <label className="labelTraslado">Traslado</label>
                     <select className="selectTraslado"
@@ -121,8 +120,8 @@ import { useNavigate } from "react-router-dom";
                          }}> 
                         
                         <option value="1" defaultValue={[0]} >Elige una opción</option>
-                        <option value="2">Sí</option>
-                        <option value="3">No</option>
+                        <option value="Si">Sí</option>
+                        <option value="No">No</option>
                     </select>
                     <label className="labelLinkedin">Perfil Linkedin</label>
                     <input className="inputLinkedin" type="text"
@@ -148,22 +147,26 @@ import { useNavigate } from "react-router-dom";
                         <p className="p3">Archivos soportados: .pdf</p>
                         <p className="p2">Tamaño de archivo máximo: 20MB</p>
                         <label className="labelEtiqueta">Etiquetas</label>
-                        <select className="inputEtiqueta"
-                        
+                        <select className="inputEtiqueta"                        
                         value={state.etiquetas}
-                     onChange={e =>{ e.preventDefault(); dispatch({
-                         type:NuevoAlumnoReducer.types.ETIQUETAS, 
-                         value: e.target.value
-                         
-                     })
-                      }}> 
+                        onChange={e =>{ e.preventDefault(); 
+                                        
+                                        dispatch({
+                                            type:NuevoAlumnoReducer.types.ETIQUETAS, 
+                                            value: e.target.value                                        
+                                        });
+                        }}> 
+                      
                         <option value="1" defaultValue={[0]} >Elige una opción</option>
-                        <option value="2">JAVASCRIPT</option>
-                        <option value="3">REACT</option>
-                        <option value="3">ANGULAR</option>
-                        <option value="3">SPRING</option>
-                        <option value="3">JAVA</option>
+                        <option value="JAVASCRIPT">JAVASCRIPT</option>
+                        <option value="REACT">REACT</option>
+                        <option value="ANGULAR">ANGULAR</option>
+                        <option value="SPRING">SPRING</option>
+                        <option value="JAVA">JAVA</option>
                         </select>
+                        
+                        {etiquetasSeleccionadas}
+
                         <button className="guardar" onClick={(e) => { save(e);  }}>Guardar</button>
                         <button className="cancelar">Cancelar</button>
                     </div>
