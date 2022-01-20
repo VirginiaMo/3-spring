@@ -4,9 +4,10 @@
 .containerFiltro{
     width: 315px;
     height: 670px;
-    margin-left: 87.8rem;
-    margin-top: -42.4rem;
-    border: #A5A8B3 solid 1px;
+    margin-left: 87rem;
+    margin-top: -40rem;
+    position: sticky;
+ 
     
 }
 .iconTrash{
@@ -53,7 +54,8 @@ line-height: 16px;
     margin-top: 0rem;
     color:#A5A8B3;
     width: 16rem;
- 
+    height: 2.7rem;
+    background-color:#ffffff;
   
  
 }
@@ -77,20 +79,15 @@ button{
     color: #A5A8B3;
     margin-left: 0.5rem;
 }
-.tagReact{
-    margin-left: 9rem;
-    margin-top: -1.5rem;
 
-
-}
 .containerFormulario .tagHtml{
     margin-left: 1.5rem;
     margin-top: 0rem;
+    width: 110px;
+  
 }
-.containerFormulario .tagAngular{
-    margin-left: 1.5rem;
-    margin-top: 0.5rem;
-}
+ 
+
 .containerFormulario .labelPais{
     
     margin-top: 0.5rem;
@@ -109,7 +106,7 @@ button{
 }
 .containerFormulario .labelCiudad{
     margin-left: 1.5rem;
-    margin-top: 0rem;
+    margin-top: 1rem;
     font-family: Raleway;
     font-style: normal;
     font-weight: bold;
@@ -124,7 +121,7 @@ button{
 }
 .containerFormulario .labelCheckbox1{
     margin-left: 2rem;
-    margin-top: 0rem;
+    margin-top: 1rem;
     font-family: Raleway;
     font-style: normal;
     font-weight: bold;
@@ -215,3 +212,12 @@ button{
     font-size: 15px;
     line-height: 18px; 
 }
+
+.css-14el2xx-placeholder{
+    padding-right: 7rem;}
+
+.css-6j8wv5-Input{
+    height: 2rem;
+  
+}
+  

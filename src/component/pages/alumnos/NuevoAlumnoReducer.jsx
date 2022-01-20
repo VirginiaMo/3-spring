@@ -24,7 +24,7 @@ const initialFormState ={
     subir_imagen:"",
     presencialidad:"",
     traslado:"",
-    etiquetas:"",    
+    etiquetas:[],    
 };
 
 
@@ -50,7 +50,7 @@ const reducer = (state, action) =>{
         case types.LINKEDIN: 
             return  {...state, linkedin: action.value}
         case types.ETIQUETAS: 
-            return  {...state, etiquetas: action.value} 
+            return  {...state, etiquetas: state.etiquetas.includes(action.value) ? state.etiquetas : state.etiquetas.concat(action.value) } 
         case types.SUBIR_DOCUMENTO: 
             return  {...state, subir_documento: action.value}
         case types.SUBIR_IMAGEN: 

@@ -43,8 +43,7 @@ const reducer = (state, action) =>{
                 return{ ...state, tecnologias: state.tecnologias.splice(toRemoveIndex, 1) }; 
               }
        case types.RESET: 
-       {
-           
+       {           
             return initialFormState;     
        }
                 

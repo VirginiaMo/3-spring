@@ -105,25 +105,6 @@
         "etiquetas": ["REACT", "ANGULAR"],
         "estado":"CONTRATADO"
        
-    },
-    {   "id": 11,
-        "nombre":"Fernando Díaz Puentes",
-        "ciudad": "Madrid",
-        "pais": "España",
-        "telefono": "+34 127 88 60 45",
-        "email": "fernando@gmail.com",
-        "etiquetas": ["JAVA", "REACT"],
-        "estado":"PRESELECCIONADO"
-       
-    },
-    {   "id": 12,
-        "nombre":"Francisco Rivera Salgado",
-        "ciudad": "Málaga",
-        "pais": "España",
-        "telefono": "+34 127 88 60 45",
-        "email": "francisco@gmail.com",
-        "etiquetas": ["VUE", "ANGULAR"],
-        "estado":"PDTE. OFERTAS"
-       
     }
+  
 ]

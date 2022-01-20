@@ -1,13 +1,25 @@
 import './Filtros.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import {  useReducer} from 'react';
+import {  useReducer, useState} from 'react';
 import FiltroFormReducer from './filtroFormReducer';
+import Select from 'react-select'
+
 
 
 const Filtros = () => {
     
 const [state, dispatch] = useReducer(FiltroFormReducer.reducer, FiltroFormReducer.initialFormState)
+const [options] = useState( [
+    { id: 1, country: "España" },
+    { id: 2, country: "Suiza" }, 
+    { id: 3, country: "Argentina" },
+] )
+const [opt] = useState( [
+    { id: 1, city: "Malaga" },
+    { id: 2, city: "Barcelona" }, 
+    { id: 3, city: "Madrid" },
+] )
 
 
 function deleteTecnologia(tecnologia) {
@@ -25,17 +37,20 @@ function deleteTecnologia(tecnologia) {
                 <form>
                     <label className='labelTecno'>Tecnologías</label>
                     <select className='selectTecno' 
+                    
                     onChange={e =>{ e.preventDefault(); dispatch({
                                                                     type:FiltroFormReducer.types.TECNOLOGIAS, 
-                                                                    value: e.target.options[e.target.selectedIndex].text 
+                                                                    value: e.target.options[e.target.selectedIndex].text                                                                     
                                                                 })
-                    }}>      
-                    <option value="1" defaultValue={[0]}>Elige...</option> 
-                    <option value="2">JAVASCRIPT</option> 
-                    <option value="3">REACT</option> 
-                    <option value="4">ANGULAR</option>
-                    <option value="5">SPRING</option>  
-                    </select>
+                    }}>
+                    <option value='default'>Select...</option>      
+                    <option value="Javascript">JAVASCRIPT</option> 
+                    <option value="react">REACT</option> 
+                    <option value="angular">ANGULAR</option>
+                    <option value="spring">SPRING</option>  
+                </select>
+                           
+                    
                 
                     {
                         
@@ -48,22 +63,43 @@ function deleteTecnologia(tecnologia) {
                     }
                     
                     <label className='labelPais'>País</label>
-                    <select className='selectPais'
+                    
+                   {/* <select className='selectPais'
                     value={state.pais}
                     onChange={e =>{ e.preventDefault(); dispatch({
                         type:FiltroFormReducer.types.PAIS, 
-                        value: e.target.value
+                        value: e.target.value,
                         
-                    })
-}}>      
-                        <option value="1" defaultValue={[0]}>Buscar</option>
-                        <option value="2">España</option>
-                        <option value="3">Argentina</option>
-                        <option value="4">Suiza</option>
-                    </select>
+                    });   
+                    }}>      
+                        <option value="0" defaultValue={[0]}>Buscar</option>
+                        <option value="España">España</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Suiza">Suiza</option>
+                </select>   */}
+
+            <div  >
+                <Select
+                className='selectPais'
+                multi={false}
+                options={ options.map( ( item, index ) => { 
+                                        return { value: item.id, label: item.country } 
+                                    } ) 
+                        } 
+                value={state.pais}
+                onChange={(value) => {         
+                         console.log(value);
+                    dispatch({
+                    type:FiltroFormReducer.types.PAIS, 
+                    value: value
+                  });  
                    
+                         
+            }} />
+            </div>     
+                       
                     <label className='labelCiudad'>Ciudad</label>
-                    <select className='selectCiudad'
+                    {/*<select className='selectCiudad'
                            value={state.ciudad}
                            onChange={e =>{ e.preventDefault(); dispatch({
                                type:FiltroFormReducer.types.CIUDAD, 
@@ -75,7 +111,27 @@ function deleteTecnologia(tecnologia) {
                         <option value="2">Barcelona</option>
                         <option value="3">Madrid</option>
                         <option value="4">Málaga</option>
-                    </select>
+                        </select>*/}
+                        
+                        <div  >
+                            <Select
+                            className='selectPais'
+                            multi={false}
+                            options={ opt.map( ( item, index ) => { 
+                                                    return { value: item.id, label: item.city } 
+                                                } ) 
+                                    } 
+                            value={state.ciudad}
+                            onChange={(value) => {         
+
+                                dispatch({
+                                type:FiltroFormReducer.types.CIUDAD, 
+                                value: value
+                            });  
+                            
+                                    
+                        }} />
+                        </div> 
                     <label className='labelCheckbox1'>Presencial / a distancia</label>
                     <input className='inputCheck1' type="checkbox" 
                     checked={state.presencialidad}

@@ -259,12 +259,20 @@ line-height: 22px;
     height: 50px;
     padding-left: 10px;
     padding-top: 12px;
+    position: fixed;
 }
 .RightSide .cancelar{
 margin-left: 23rem;
-margin-top: -3rem;
+margin-top: 27rem;
+
 }
 .RightSide .guardar{
     margin-left: 13rem;
-    margin-top: 11rem;
+    margin-top: 27rem;
+    
+    }
+    .btn-primary{
+        width: 80px;
+        text-align: center;
+     
     }
