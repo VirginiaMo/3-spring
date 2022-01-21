@@ -4,10 +4,11 @@ import { faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import {  useReducer, useState} from 'react';
 import FiltroFormReducer from './filtroFormReducer';
 import Select from 'react-select'
+import { useEffect } from 'react';
 
 
 
-const Filtros = () => {
+const Filtros = ( { setSearchState }) => {
     
 const [state, dispatch] = useReducer(FiltroFormReducer.reducer, FiltroFormReducer.initialFormState)
 const [options] = useState( [
@@ -26,7 +27,10 @@ function deleteTecnologia(tecnologia) {
     dispatch({ type: FiltroFormReducer.types.DELETE_TECNOLOGIA, value: tecnologia })
 };
 
-   
+    useEffect(() => {
+        setSearchState(state);
+    }, [state, setSearchState]);   
+
     return (  
         <div className='containerFiltro'>
             <div>
@@ -38,10 +42,12 @@ function deleteTecnologia(tecnologia) {
                     <label className='labelTecno'>Tecnologías</label>
                     <select className='selectTecno' 
                     
-                    onChange={e =>{ e.preventDefault(); dispatch({
-                                                                    type:FiltroFormReducer.types.TECNOLOGIAS, 
-                                                                    value: e.target.options[e.target.selectedIndex].text                                                                     
-                                                                })
+                    onChange={e =>{ e.preventDefault(); 
+                                        dispatch({
+                                                    type:FiltroFormReducer.types.TECNOLOGIAS, 
+                                                    value: e.target.options[e.target.selectedIndex].text                                                                     
+                                                });
+
                     }}>
                     <option value='default'>Select...</option>      
                     <option value="Javascript">JAVASCRIPT</option> 
@@ -87,14 +93,15 @@ function deleteTecnologia(tecnologia) {
                                     } ) 
                         } 
                 value={state.pais}
-                onChange={(value) => {         
-                         console.log(value);
+                onChange={(value) => {   
                     dispatch({
                     type:FiltroFormReducer.types.PAIS, 
-                    value: value
-                  });  
-                   
-                         
+                    value: value.label
+                  });              
+                  
+
+                  
+                  
             }} />
             </div>     
                        
@@ -126,9 +133,9 @@ function deleteTecnologia(tecnologia) {
 
                                 dispatch({
                                 type:FiltroFormReducer.types.CIUDAD, 
-                                value: value
+                                value: value.label
                             });  
-                            
+                             
                                     
                         }} />
                         </div> 
@@ -138,7 +145,7 @@ function deleteTecnologia(tecnologia) {
                     onChange={() =>{  dispatch({
                         type:FiltroFormReducer.types.PRESENCIALIDAD
                         
-                    })
+                    });
                     }}/>
                     
                     <label className='labelCheckbox2' >Presencial</label>

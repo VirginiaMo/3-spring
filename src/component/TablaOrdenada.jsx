@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function TablaOrdenada( { searchText, hideColumns }) {
+export default function TablaOrdenada( { searchText, hideColumns, searchByState }) {
 
 	const[sortBy, setSortBy] = useState(null); 
 
@@ -16,7 +16,7 @@ export default function TablaOrdenada( { searchText, hideColumns }) {
 		}
 		setSortBy({ key, direction });
 	  }
-
+console.log(searchByState);
     return (	
 			<div className='containerTabla'>
 	          <Table>
@@ -33,7 +33,7 @@ export default function TablaOrdenada( { searchText, hideColumns }) {
 	              </tr>
 	            </thead> 
 
-				<DatosTabla sortBy={sortBy} searchBy={searchText} hideColumns={hideColumns} />
+				<DatosTabla sortBy={sortBy} searchByText={searchText} searchByState={searchByState} hideColumns={hideColumns} />
 	          </Table>
 			</div>
 	)

@@ -12,7 +12,7 @@ const types = {
 }
 
 const initialFormState ={
-    tecnologias:[""],
+    tecnologias:[],
     ciudad:"",
     pais:"",
     presencialidad:"",

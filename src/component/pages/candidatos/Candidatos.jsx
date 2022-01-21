@@ -10,6 +10,7 @@ import Navbar from '../../navbar/Navbar';
 const Candidatos= () => {
 
     const [searchText, setSearchText] = useState('')
+    const [searchState, setSearchState] = useState('')
 
     //const hideColumns = ["nombre"];
 
@@ -17,8 +18,9 @@ const Candidatos= () => {
         <>  <Navbar />
             <SearchPage/>
             <Buscador setSearchText={setSearchText} title={"Alumno"}/>
-            <TablaOrdenada searchText={searchText} />
-            <Filtros />
+            <Filtros setSearchState={setSearchState} />
+            <TablaOrdenada searchText={searchText} searchByState={searchState} />
+            
        
         </>
      );

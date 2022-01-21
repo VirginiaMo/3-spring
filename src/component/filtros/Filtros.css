@@ -5,8 +5,9 @@
     width: 315px;
     height: 670px;
     margin-left: 87rem;
-    margin-top: -40rem;
+    margin-top: -7rem;
     position: sticky;
+ 
  
     
 }
@@ -219,5 +220,8 @@ button{
 .css-6j8wv5-Input{
     height: 2rem;
   
-}
   
+}
+.css-qc6sy-singleValue{
+padding-right: 7rem;
+}

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import useCandidatos from "../customHooks/candidatos/useCandidatos"
 
 
-export default function DatosTabla( { sortBy, searchBy, hideColumns}){
+export default function DatosTabla( { sortBy, searchByText, hideColumns, searchByState}){
 
 	const { candidatos } = useCandidatos();
     const[sortedData, setSortedData] = useState([]);
@@ -53,15 +53,32 @@ export default function DatosTabla( { sortBy, searchBy, hideColumns}){
 		
 		<tbody>
 			{sortedData.filter((item)=>{
-				if(searchBy == ""){
+				
+				if(searchByText == "" && searchByState == [] ){
 					return item
-				}else if(item.nombre.toLowerCase().includes(searchBy.toLocaleLowerCase())
-					|| item.ciudad.toLowerCase().includes(searchBy.toLocaleLowerCase())
-					|| item.pais.toLowerCase().includes(searchBy.toLocaleLowerCase())
-					|| item.email.toLowerCase().includes(searchBy.toLocaleLowerCase())
-					|| item.ciudad.toLowerCase().includes(searchBy.toLocaleLowerCase())){
-					return item
-				}
+				}else {
+					if (searchByText != "") {
+						if(item.nombre.toLowerCase().includes(searchByText.toLowerCase())
+							|| item.ciudad.toLowerCase().includes(searchByText.toLowerCase())
+							|| item.pais.toLowerCase().includes(searchByText.toLowerCase())
+							|| item.email.toLowerCase().includes(searchByText.toLowerCase())
+							|| item.ciudad.toLowerCase().includes(searchByText.toLowerCase())){
+							return item;
+						}
+					} else 
+						
+						// search by state
+						if (item.pais.includes(searchByState.pais)
+							&& item.ciudad.includes(searchByState.ciudad)
+							&& (searchByState.tecnologias.length === 0 || item.etiquetas.some(t => searchByState.tecnologias.includes(t)))
+						
+							) {
+							return item;
+						
+						}			
+				}		
+				
+				
 			}).map((item, index) => (
 				<tr key={index} onClick={handleClick} >
 				    { (hideColumns == undefined || !hideColumns.includes("nombre")) && <td> {item.nombre}</td>}
