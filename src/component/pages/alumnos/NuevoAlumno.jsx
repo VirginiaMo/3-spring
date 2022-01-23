@@ -17,10 +17,10 @@ import { useNavigate } from "react-router-dom";
     const { addCandidato } = useCandidatos();
     let navigate = useNavigate();
 
-    const save = (e) => {
+    const save = async (e) => {
         e.preventDefault();
-        let nuevoCandidato = addCandidato(state);
-        navigate(`/perfil/${nuevoCandidato.id}` );        
+        let IdNuevoCandidato = await addCandidato(state);
+        navigate(`/perfil/${IdNuevoCandidato}` );        
     }
 
     let etiquetasSeleccionadas = null;
