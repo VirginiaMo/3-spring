@@ -1,18 +1,35 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { faChevronLeft, faCloudUploadAlt, faDotCircle, faMapMarkerAlt, faSearch, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Imagen from "../../image/Image";
 import NavTabs from "../../tabs/Tabs";
 import './Alumno.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../../navbar/Navbar';
+import useCandidatos from '../../customHooks/candidatos/useCandidatos';
 
 
-
-const Alumno = () => {
+const Alumno =  () => {
 
     const [pdfFileError, setPdfFileError]=useState('');
     const [pdfFileEvent, setPdfFileEvent]=useState('');
+
+    const [alumno, setAlumno]=useState('');
+
+    const { id } = useParams();
+    const { getCandidato } = useCandidatos();
+
+    
+
+    useEffect( () => { 
+        async function getCand() {
+            const res = await getCandidato(id);
+            console.log(res)
+            setAlumno(res);
+          }
+          getCand();        
+    }, [id, getCandidato]);
+
 
     let navigate = useNavigate();
     function returnTabla() {
@@ -56,7 +73,7 @@ const Alumno = () => {
             
             <form className="containerFormulario">
                 <label className="labelNombre">Nombre y Apellidos</label>
-                <input className='nombreAlumno' type="text" placeholder='Nombre Alumno'></input>
+                <input className='nombreAlumno' type="text" placeholder='Nombre Alumno'>{alumno.nombre}</input>
                 <label className='labelTelefono'>Nº Teléfono</label>
                 <input type="text"></input>
                 <label className='inputLabel'>Email</label>

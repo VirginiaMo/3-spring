@@ -45,8 +45,9 @@ export default function DatosTabla( { sortBy, searchByText, hideColumns, searchB
 
 	
 	let navigate = useNavigate();
-	function handleClick() {
-		navigate('/alumnos', {replace: true});
+	function handleClick(id) {
+		console.log("navegando")
+		navigate(`/alumnos/${id}`, {replace: true});
 	}
 	
 	return 	(
@@ -80,7 +81,7 @@ export default function DatosTabla( { sortBy, searchByText, hideColumns, searchB
 				
 				
 			}).map((item, index) => (
-				<tr key={index} onClick={handleClick} >
+				<tr key={index} onClick={ () => { handleClick(item.id) } } >
 				    { (hideColumns == undefined || !hideColumns.includes("nombre")) && <td> {item.nombre}</td>}
 					{ (hideColumns == undefined || !hideColumns.includes("ciudad")) && <td>{item.ciudad}</td> }
 					{ (hideColumns == undefined || !hideColumns.includes("pais")) && <td>{item.pais}</td> }

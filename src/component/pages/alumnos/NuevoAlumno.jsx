@@ -6,6 +6,7 @@ import NuevoAlumnoReducer from "./NuevoAlumnoReducer";
 import { useReducer } from "react";
 import useCandidatos from '../../customHooks/candidatos/useCandidatos';
 import { useNavigate } from "react-router-dom";
+import useTecnologias from "../../customHooks/tecnologias/useTecnologias";
 
 
 
@@ -14,6 +15,7 @@ import { useNavigate } from "react-router-dom";
     const handleClose = () => setShow(false);
     const [state, dispatch] = useReducer(NuevoAlumnoReducer.reducer, NuevoAlumnoReducer.initialFormState)
 
+    const { tecnologias } = useTecnologias();
     const { addCandidato } = useCandidatos();
     let navigate = useNavigate();
 
@@ -158,11 +160,11 @@ import { useNavigate } from "react-router-dom";
                         }}> 
                       
                         <option value="1" defaultValue={[0]} >Elige una opción</option>
-                        <option value="JAVASCRIPT">JAVASCRIPT</option>
-                        <option value="REACT">REACT</option>
-                        <option value="ANGULAR">ANGULAR</option>
-                        <option value="SPRING">SPRING</option>
-                        <option value="JAVA">JAVA</option>
+                        {
+                            tecnologias.map(t => {
+                                return (<option value={t}>{t}</option> )
+                            })
+                        }
                         </select>
                         
                         {etiquetasSeleccionadas}

@@ -7,7 +7,6 @@ export default function useCandidatos() {
   const { apiToken, setApiToken } = useContext(AppContext);
 
 	useEffect(() => { 
-
       const storageApiToken = localStorage.getItem('apiToken');
       if (storageApiToken === null) {
           let requestOptions = {
@@ -20,7 +19,6 @@ export default function useCandidatos() {
                 setApiToken(data.token.token);
                 
             }))
-            .then(result => console.log(result))
             .catch(error => console.log('error', error));
       } else {
         setApiToken(storageApiToken);
@@ -29,30 +27,10 @@ export default function useCandidatos() {
       if (apiToken !== undefined) {
         getCandidatos(apiToken, setCandidatos);
       }
-
-      
-
-/*
-    const datosCandidatos = localStorage.getItem('datosCandidatos');
-    if (datosCandidatos === null)
-    {           
-      fetch('/data/data.json')
-      .then(response => {  return response.json(); })
-      .then(datos => setCandidatos(datos))
-
-    } else 
-    {
-      const cand = JSON.parse(datosCandidatos);
-      setCandidatos(cand)
-    }*/
 		
 	}, [apiToken, setApiToken, setCandidatos]);
 
   const addCandidato = async candidato => {
-
-    // cambiar autorizacion apra usar tu token de la api como en el de arriba
-    // cambiar el contenido que se envia para poner lo que viene de la variable candidato
-    // en la promesa de la respuesta, traer el json() y devolver el id
 
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + apiToken);
@@ -105,19 +83,29 @@ export default function useCandidatos() {
     await getCandidatos(apiToken, setCandidatos);
     return id;
 
-
-
-
-    /*
-    let nextId = Math.max.apply(Math, candidatos.map(function(c) { return c.id; })) + 1;
-    candidato.id = nextId;
-    setCandidatos(candidatos.concat(candidato));
-    localStorage.setItem('datosCandidatos', JSON.stringify(candidatos.concat(candidato)));
-    return candidato;*/
   };
+
+  const getCandidato = async id => {
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer " + apiToken);
+    
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+    
+    return await fetch("https://api-fc.herokuapp.com/api/candidatos/" + id, requestOptions)
+      .then(response =>  { return response.json(); })
+      .then(responseJson => { const resp = getMappedCandidato(responseJson.data); console.log(resp); return resp; } )
+      .catch(error => console.log('error', error));
+
+  }
 
   return {
     addCandidato: addCandidato,
+    getCandidato: getCandidato,
     candidatos
   }
 
@@ -136,40 +124,44 @@ async function getCandidatos(apiToken, setCandidatos) {
   await fetch("https://api-fc.herokuapp.com/api/candidatos?todos=true", requestOptions)
     .then(response => response.json().then(responseJson => {
 
-      const mappedData = responseJson.data.data.map(x => ({
-        nombre: x.nombreCompleto,
-        id: x.id,
-        ciudad: x.ciudad === null ? "" : x.ciudad,
-        pais: x.pais === null ? "" : x.pais,
-        telefono: x.telefono,
-        email: x.email,
-        etiquetas: x.tecnologias,
-        estado: x.estado,
-        fechaAlta: x.fechaAlta,
-        cv: x.cv,
-        perfil: x.perfil,
-        fechaUltimoContacto: x.fechaUltimoContacto,
-        experienciaGlobal: x.experienciaGlobal,
-        salarioActual: x.salarioActual,
-        salarioDeseado: x.salarioDeseado,
-        habilidadesComunicacion: x.habilidadesComunicacion,
-        feedbackEntrevista: x.feedbackEntrevista,
-        observaciones: x.observaciones,
-        enlaceLinkedin: x.enlaceLinkedin,
-        disponibilidadTraslado: x.disponibilidadTraslado,
-        remoto: x.remoto,
-        avatar: x.avatar,
-        userId: x.userId,
-        created_at: x.created_at,
-        updated_at: x.updated_at,
-        lastEstadoUpdate: x.lastEstadoUpdate,
-        user: x.user,
-        entrevistas: x.entrevistas,
-        idiomas: x.idiomas
-      }));
+      const mappedData = responseJson.data.data.map(x => getMappedCandidato(x));
       setCandidatos(mappedData);
 
     }))
-    .then(result => console.log(result))
     .catch(error => console.log('error', error));
+}
+
+function getMappedCandidato(input) {
+  const output = {
+    nombre: input.nombreCompleto,
+    id: input.id,
+    ciudad: input.ciudad === null ? "" : input.ciudad,
+    pais: input.pais === null ? "" : input.pais,
+    telefono: input.telefono,
+    email: input.email,
+    etiquetas: input.tecnologias.map(x => x.nombre),
+    estado: input.estado,
+    fechaAlta: input.fechaAlta,
+    cv: input.cv,
+    perfil: input.perfil,
+    fechaUltimoContacto: input.fechaUltimoContacto,
+    experienciaGlobal: input.experienciaGlobal,
+    salarioActual: input.salarioActual,
+    salarioDeseado: input.salarioDeseado,
+    habilidadesComunicacion: input.habilidadesComunicacion,
+    feedbackEntrevista: input.feedbackEntrevista,
+    observaciones: input.observaciones,
+    enlaceLinkedin: input.enlaceLinkedin,
+    disponibilidadTraslado: input.disponibilidadTraslado,
+    remoto: input.remoto,
+    avatar: input.avatar,
+    userId: input.userId,
+    created_at: input.created_at,
+    updated_at: input.updated_at,
+    lastEstadoUpdate: input.lastEstadoUpdate,
+    user: input.user,
+    entrevistas: input.entrevistas,
+    idiomas: input.idiomas
+  };
+  return output;
 }

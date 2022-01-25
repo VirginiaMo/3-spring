@@ -5,7 +5,7 @@ import {  useReducer, useState} from 'react';
 import FiltroFormReducer from './filtroFormReducer';
 import Select from 'react-select'
 import { useEffect } from 'react';
-
+import useTecnologias from '../customHooks/tecnologias/useTecnologias';
 
 
 const Filtros = ( { setSearchState }) => {
@@ -21,6 +21,7 @@ const [opt] = useState( [
     { id: 2, city: "Barcelona" }, 
     { id: 3, city: "Madrid" },
 ] )
+const { tecnologias } = useTecnologias();
 
 
 function deleteTecnologia(tecnologia) {
@@ -50,12 +51,12 @@ function deleteTecnologia(tecnologia) {
 
                     }}>
                     <option value='default'>Select...</option>      
-                    <option value="Javascript">JAVASCRIPT</option> 
-                    <option value="react">REACT</option> 
-                    <option value="angular">ANGULAR</option>
-                    <option value="spring">SPRING</option>  
-                </select>
-                           
+                    {
+                        tecnologias.map(t => {
+                            return (<option value={t}>{t}</option> )
+                        })
+                    }
+                </select>                          
                     
                 
                     {

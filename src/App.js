@@ -27,7 +27,7 @@ function App() {
                               <Route path="/perfil/:id" element={<Perfil  />} />  
                               <Route path="/ofertas" element={<Ofertas />} /> 
                               <Route path="/candidatos" element ={<Candidatos />}  />
-                              <Route path="/alumnos" element={<Alumno />} />
+                              <Route path="/alumnos/:id" element={<Alumno />} />
                               <Route path="/clientes" element ={<Clientes />}  />  
                         </Routes>
                   </BrowserRouter>
