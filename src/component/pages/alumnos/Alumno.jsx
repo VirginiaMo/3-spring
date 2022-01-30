@@ -7,28 +7,36 @@ import './Alumno.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../../navbar/Navbar';
 import useCandidatos from '../../customHooks/candidatos/useCandidatos';
-
+import { TailSpin } from 'react-loader-spinner';
 
 const Alumno =  () => {
+ 
 
     const [pdfFileError, setPdfFileError]=useState('');
     const [pdfFileEvent, setPdfFileEvent]=useState('');
 
-    const [alumno, setAlumno]=useState('');
+    const [alumno, setAlumno]=useState({});
 
     const { id } = useParams();
-    const { getCandidato } = useCandidatos();
+    const { isCandidatosReady, getCandidato } = useCandidatos();
 
-    
+    console.log("id " + id);    
 
     useEffect( () => { 
         async function getCand() {
+            console.log(id)
             const res = await getCandidato(id);
-            console.log(res)
-            setAlumno(res);
+            
+            if (res !== undefined) {
+                setAlumno(res);
+            }            
           }
-          getCand();        
-    }, [id, getCandidato]);
+          console.log("llamada");
+          if (isCandidatosReady) {
+            getCand();
+          }
+                 
+    }, [isCandidatosReady]);
 
 
     let navigate = useNavigate();
@@ -36,7 +44,8 @@ const Alumno =  () => {
         navigate('/candidatos', {replace: true});
     }
 
-    return ( 
+
+    return alumno === undefined ? (<TailSpin type="Circles" color="#00BFFF" height={640} width={480}/>) : ( 
 
             <div><Navbar />
             <div className='containerSelect'>
@@ -73,46 +82,33 @@ const Alumno =  () => {
             
             <form className="containerFormulario">
                 <label className="labelNombre">Nombre y Apellidos</label>
-                <input className='nombreAlumno' type="text" placeholder='Nombre Alumno'>{alumno.nombre}</input>
+                <input className='nombreAlumno' type="text" placeholder='Nombre Alumno' value={alumno.nombre}></input>
                 <label className='labelTelefono'>Nº Teléfono</label>
-                <input type="text"></input>
+                <input type="text" value={alumno.telefono}></input>
                 <label className='inputLabel'>Email</label>
-                <input className='inputEmail' type="email" placeholder='email'></input>
-                <label className='labelPais'>País</label>
+                <input className='inputEmail' type="email" placeholder='email'  value={alumno.email}></input>
+                <label >País</label>
                 <select>
-                    <option value="1"></option>
-                    <option value="2">España</option>
-                    <option value="3">Suiza</option>
-                    <option value="4">Argentina</option>
-                    <option value="5">Alemania</option>
-                    <option value="6">Estados Unidos</option>
+                <option value={alumno.pais}>{alumno.pais}</option> 
+                 
                 </select>
                 <label className='inputLabelCiudad'>Ciudad</label>
                 <select className='inputCiudad'>
-                    <option value="1"></option>
-                    <option value="2">Málaga</option>
-                    <option value="3">Barcelona</option>
-                    <option value="4">Sevilla</option>
-                    <option value="5">Galicia</option>
-                    <option value="6">Valencia</option>
+                <option value={alumno.ciudad}>{alumno.ciudad}</option> 
                 </select>
                 <label className='labelTraslado'>Traslado</label>
                 <select>
-                    <option value="1">Sí</option>
-                    <option value="2">No</option>
+                <option value={alumno.traslado}>{alumno.traslado}</option> 
                 </select>
                 <label className='inputPresencialidad'>Presencialidad</label>
                 <select className='selectPresencialidad'>
-                    <option value="1">Presencial</option>
-                    <option value="2">Remoto</option>
+                <option value={alumno.presencialidad}>{alumno.presencialidad}</option> 
                 </select>
                 <label>Enlace a Linkedin</label>
-                <input type="text" placeholder="http://linkedin.com/user_id3423984324"></input>
+                <input type="text" placeholder="http://linkedin.com/user_id3423984324"  value={alumno.linkedin}></input>
                 <label className="estadoLaboral">Estado laboral</label>
                 <select className="selectEstadoLaboral">
-                    <option value="Contratado"></option>
-                    <option value="Pdte. Ofertas"></option>
-                    <option value="Preseleccionado"></option>
+                <option value={alumno.estado}>{alumno.estado}</option> 
                 </select>
                 <label className='labelDocumento'>Documento CV</label>
             <label htmlFor="file-upload" className="subir">  

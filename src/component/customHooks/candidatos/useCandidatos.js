@@ -5,6 +5,7 @@ export default function useCandidatos() {
 
   const { candidatos, setCandidatos } = useContext(AppContext);
   const { apiToken, setApiToken } = useContext(AppContext);
+  const { isCandidatosReady, setIsCandidatosReady } = useContext(AppContext);
 
 	useEffect(() => { 
       const storageApiToken = localStorage.getItem('apiToken');
@@ -16,19 +17,19 @@ export default function useCandidatos() {
           fetch("https://api-fc.herokuapp.com/authAPI/login?email=virginia.morilla@gmail.com&password=123456", requestOptions)
             .then(response => response.json().then(data => {
                 localStorage.setItem("apiToken", data.token.token);
-                setApiToken(data.token.token);
-                
+                setApiToken(data.token.token);                
             }))
             .catch(error => console.log('error', error));
       } else {
         setApiToken(storageApiToken);
       } 
-
+      
       if (apiToken !== undefined) {
         getCandidatos(apiToken, setCandidatos);
+        setIsCandidatosReady(true);
       }
 		
-	}, [apiToken, setApiToken, setCandidatos]);
+	}, [apiToken, setIsCandidatosReady]);
 
   const addCandidato = async candidato => {
 
@@ -55,17 +56,22 @@ export default function useCandidatos() {
       "habilidadesComunicacion":candidato.habilidadesComunicacion,
       "feedbackEntrevista":candidato.feedbackEntrevista,
       "observaciones":candidato.observaciones,
-      "enlaceLinkedin":candidato.enlaceLinkedin,
-      "disponibilidadTraslado":candidato.disponibilidadTraslado,
-      "remoto":candidato.remoto,
+      "enlaceLinkedin":candidato.linkedin,
+      "disponibilidadTraslado":candidato.traslado === "Sí" ? true : false,
+      "remoto": candidato.presencialidad === "Presencial" ? true : false,
       "avatar":candidato.avatar,
       "userId":candidato.userId,
       "created_at":candidato.created_at,
       "updated_at":candidato.updated_at,
       "lastEstadoUpdate":candidato.lastEstadoUpdate,
-      "user":candidato.user,
+      "user": {
+        "id": 5,
+        "username": "virginia",
+        "avatar": null
+      },
       "entrevistas":candidato.entrevistas,
-      "idiomas":candidato.idiomas
+      "idiomas":candidato.idiomas,
+      
        });
     
     var requestOptions = {
@@ -87,6 +93,10 @@ export default function useCandidatos() {
 
   const getCandidato = async id => {
 
+    if (apiToken === undefined) {
+      console.log("no apitoken");
+      return;
+    };
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + apiToken);
     
@@ -106,7 +116,8 @@ export default function useCandidatos() {
   return {
     addCandidato: addCandidato,
     getCandidato: getCandidato,
-    candidatos
+    candidatos,
+    isCandidatosReady : isCandidatosReady
   }
 
 }
@@ -121,7 +132,7 @@ async function getCandidatos(apiToken, setCandidatos) {
     redirect: 'follow'
   };
 
-  await fetch("https://api-fc.herokuapp.com/api/candidatos?todos=true", requestOptions)
+  await fetch("https://api-fc.herokuapp.com/api/candidatos", requestOptions)
     .then(response => response.json().then(responseJson => {
 
       const mappedData = responseJson.data.data.map(x => getMappedCandidato(x));
@@ -140,7 +151,7 @@ function getMappedCandidato(input) {
     telefono: input.telefono,
     email: input.email,
     etiquetas: input.tecnologias.map(x => x.nombre),
-    estado: input.estado,
+    estado: input.estado.toUpperCase(),
     fechaAlta: input.fechaAlta,
     cv: input.cv,
     perfil: input.perfil,

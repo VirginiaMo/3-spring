@@ -31,7 +31,9 @@ export default function DatosTabla( { sortBy, searchByText, hideColumns, searchB
     
 	const getTableColor = criterio => {
 		
-		switch (criterio) {
+		switch (criterio.toUpperCase()) {
+		case "LIBRE" :
+			return { backgroundColor : '#c4b808'}
 		  case "PRESELECCIONADO":
 			return { backgroundColor: '#3684FA'}
 		  case "PDTE. OFERTAS":
